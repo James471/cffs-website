@@ -28,7 +28,7 @@
 			<div class="navbar-header">
 				<!-- Button for smallest screens -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-				<a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt="Progressus HTML5 template"></a>
+				<a class="navbar-brand" href="index.html"><img src="assets/images/CFFS_TITLE_Logo3.png" alt="Progressus HTML5 template"></a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
@@ -69,19 +69,19 @@
 					<form>
 						<div class="row">
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Name">
+								<input id="name" class="form-control" type="text" placeholder="Name">
 							</div>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Email">
+								<input id="email" class="form-control" type="text" placeholder="Email">
 							</div>
 							<div class="col-sm-4">
-								<input class="form-control" type="text" placeholder="Phone">
+								<input id="phone" class="form-control" type="text" placeholder="Phone">
 							</div>
 						</div>
 						<br>
 						<div class="row">
 							<div class="col-sm-12">
-								<textarea placeholder="Type your message here..." class="form-control" rows="9"></textarea>
+								<textarea id="body" placeholder="Type your message here..." class="form-control" rows="9"></textarea>
 							</div>
 						</div>
 						<br>
@@ -90,7 +90,7 @@
 								<label class="checkbox"></label>
 							</div>
 							<div class="col-sm-6 text-right">
-								<input class="btn btn-action" type="submit" value="Send message">
+								<input class="btn btn-action" type="submit" value="Send message", onclick="submiter()">
 							</div>
 						</div>
 					</form>
@@ -178,6 +178,18 @@
 	<script src="assets/js/headroom.min.js"></script>
 	<script src="assets/js/jQuery.headroom.min.js"></script>
 	<script src="assets/js/template.js"></script>
+	<script type="text/javascript">
+		function submiter() {
+			name = encodeURI(document.getElementById("name").value)
+			email = encodeURI(document.getElementById("email").value)
+			phone = encodeURI(document.getElementById("phone").value)
+			body = encodeURI(document.getElementById("body").value)
+			console.log(name,email,phone,body);
+			stringer = "mailto:cffs.contacts@gmail.com?subject=CFFS%20Day%202022%20Feedback-"+name+","+email+", "+phone+"&body="+body
+			console.log(stringer)
+			location.href = stringer
+		}
+	</script>
 
 </body>
 </html>
