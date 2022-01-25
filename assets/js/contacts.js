@@ -25,17 +25,21 @@ function submitContactForm() {
             })
             .then((docRef)=> {
                 console.log("Form successfully submitted.");
+                return true;
             })
             .catch((error)=> {
                 console.log(error);
+                return false;
             })
 
         } else {
             console.log("Invalid email or phone");
+            return false;
         }
 
     } else {
         console.log("All fields are required.");
+        return false;
     }
 
 }
